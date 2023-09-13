@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TFT Comps</title>
+
+  </head>
+<body>
+  
+  <form method="POST" action="/stack">
+    {% csrf_token %}
+    <select id="carv" name="carv">
+      <option value="volvo">AAA</option>
+      <option value="saab">BBB</option>
+      <option value="opel">CCC</option>
+      <option value="audi">DDD</option>
+      
+    </select>
+    <option value="">Please select</option>
+
+  <input type=submit>
+</form>
+</body>
+
+
+</html>
