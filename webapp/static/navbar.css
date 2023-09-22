@@ -84,7 +84,7 @@ html {
 }
 #pddetail div:last-child {
     border-radius: 0px 5px 0px 0px;
-    border-right: 0px;
+    border-right: none !important;
 
 }
 
@@ -147,6 +147,7 @@ html {
     background-color: #4f4661;
     color: #ebebeb;
     border-radius: 0px;
+
  }
 #productcontent{
 
@@ -377,7 +378,7 @@ html {
         font-weight:500 !important;
     }
     #pp-price{
-        font-size: 17px !important;
+        font-size: 19px !important;
     }
     .pdsld img{
         height: 35px;
@@ -395,6 +396,9 @@ html {
         font-size: 11px;
         font-weight:600 !important;
         
+}
+#pdtbdesc{
+    
 }
     @media only screen and (min-width: 576px) {
         #pp-revcount{

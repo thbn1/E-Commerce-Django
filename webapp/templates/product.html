@@ -1,12 +1,12 @@
 {%extends "navbar.html"%}
 {%block content%}
 
-<div class="container">
-    <div class="shadow-sm p-0">
-        <div class="row row-cols-1 row-cols-xl-2 m-0 rounded-1">
+<div class="container-lg pb-5">
+    <div class="shadow p-0">
+        <div class="row row-cols-1 row-cols-lg-2 m-0 rounded-1">
             <div class="col-12 column-xl-5 p-1 p-md-4 pb-md-0 ">
-                <div id="slidebar2" class="pb-0 d-flex align-items-center flex-column-reverse flex-xl-row" style="">
-                    <div id="slides" class="d-flex flex-row flex-xl-column p-1 rounded-0 gap-2 p-1 pdsld scroll2 mb-0 pe-3" style="overflow-x:auto !important" >
+                <div id="slidebar2" class="pb-0 d-flex align-items-center flex-column-reverse flex-xl-row scroll3" style="">
+                    <div id="slides" class="d-flex flex-row flex-xl-column p-1 rounded-0 gap-2 p-1 pdsld mb-0 pe-3" style="overflow-x:auto !important" >
                         <img class="rounded-1 active" src="/media/images/1.jpg" style="" onclick="slideclick(this)">
                         <img class="rounded-1" src="/media/images/2.jpg" style="" onclick="slideclick(this)">
                         <img class="rounded-1" src="/media/images/3.jpg" style="" onclick="slideclick(this)">
@@ -20,23 +20,23 @@
 
                     </div>
                     <div class="p-2">
-                        <img id="mainslide" class="rounded-1 w-100" src="/media/images/15.jpg" style="aspect-ratio:1/1;object-fit: scale-down;" >
+                        <img id="mainslide" class="rounded-1 w-100" src="/media/images/15.jpg" style="object-fit: contain;" >
                     </div>
                 </div>
             </div>
             
             <div class="col-12 column-xl-7 pb-0 " >
                 <div class="mb-3 h-100">
-                    <div class="p-4 pb-0 mt-0 h-100 d-flex flex-column" id="productcontent">
+                    <div class="p-sm-4 p-1 pb-0 mt-0 h-100 d-flex flex-column" id="productcontent">
                         <div class="text-center text-lg-start pb-4" id="contentname">
                             <span id="contentname" style="font-weight:500 !important">Lenovo IdeaPad 3 AMD Ryzen 7 5700U 8GB 512GB SSD Freedos 15.6" FHD Taşınabilir Bilgisayar<span>
                         </div>
                         <div class="row row-cols-1 row-cols-sm-2">
                             
-                            <div class="col d-flex justify-content-center justify-content-sm-start" id="contentprice">
+                            <div class="col d-flex justify-content-center justify-content-sm-start pt-2" id="contentprice">
                                 <span id="pp-price" style="font-weight:700 !important">22.499,00 TL<span>
                             </div>
-                            <div class="col d-flex justify-content-center justify-content-sm-end" id="contentrating">
+                            <div class="col d-flex justify-content-center justify-content-sm-end pt-2" id="contentrating">
                                 <label  class="text-body-secondary" style="f"><span class="align-middle" id="pp-revcount" style="ft">4,6&nbsp;&nbsp;</span>
                                 <svg style="fill:#b6b6b6" id="str" height="1.2em" viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
                                 <svg style="fill:#b6b6b6" id="str" height="1.2em" viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
@@ -46,10 +46,10 @@
                                 </label> 
                             </div>
                         </div>
-                        <div class="mt-2 row">
+                        <div class="mt-2 row pt-1">
                             <div class="col-12 col-md py-3" >
                                 
-                                <button id="addbtn" type="button" class="btn rounded-1 p-3 w-100" style="font-weight:400 !important" data-mdb-ripple-color="dark">Sepete Ekle</button>
+                                <button id="addbtn" type="button" class="btn rounded-1 p-3 w-100" style="font-weight:500 !important;font-size:14px !important" data-mdb-ripple-color="dark">Sepete Ekle</button>
                             </div>
                             <div class="col-md-auto rounded-1 py-3" >
                                 <div class="alert alert-success text-center mb-0" style="" role="alert">
@@ -145,67 +145,78 @@
         </div>
         <div id="pdtcont" class="">
 
-                <div id="pddetail" class="row">
+            <div id="pddetail" class="row row-cols-5">
 
-                            <div class="col-4 col-md text-center p-3 active" onclick="pdtabclick(this)" role="alert" id="ovf">
-
-                                <span class="" >Açıklama</span>
-                            </div>
-
-                            <div class="col-4 col-md text-center p-3" onclick="pdtabclick(this)" role="alert" id="ovf">
-
-                                <span class="" >Ürün Yorumları</span>
-                            </div>
-
-                            <div class="col-4 col-md text-center p-1 p-3" onclick="pdtabclick(this)" role="alert" id="ovf">
-
-                                <span class="" >Taksit Seçenekleri</span>
-                            </div>
-
-                            <div class="col-6 col-md text-center p-3" onclick="pdtabclick(this)" role="alert" id="ovf">
-
-                                <span class="" >İade koşulları</span>
-                            </div>
-
-                            <div class="col-6 col-md mb-0 text-center p-3" onclick="pdtabclick(this)" role="alert" id="ovf">
-
-                                <span class="">Diğer Satıcılar</span>
-                            </div>
-
+                <div com="desc" class="col col-sm text-center p-3 px-1 px-sm-3 active" onclick="pdtabclick(this)" role="alert" id="ovf">
+                    <span class="d-block" style="" >Açıklama</span>
+        
                 </div>
+
+                <div com="comment" class="col col-sm text-center p-3 px-1 px-sm-3" onclick="pdtabclick(this)" role="alert" id="ovf">
+
+                    <span class="d-none d-sm-block" >Ürün Yorumları</span>
+                    <span class="d-block d-sm-none" >Yorum</span>
+                    
+                </div>
+
+                <div com="installment"  class="col col-sm text-center p-3 px-1 px-sm-3" onclick="pdtabclick(this)" role="alert" id="ovf">
+
+                    <span class="d-none d-sm-block" >Taksit Seçenekleri</span>
+                    <span class="d-block d-sm-none" >Taksit</span>
+                </div>
+
+                <div com="return"  class="col col-sm text-center p-3 px-1 px-sm-3" onclick="pdtabclick(this)" role="alert" id="ovf">
+
+                    <span class="d-none d-sm-block" >İade koşulları</span>
+                    <span class="d-block d-sm-none" >İade</span>
+                </div>
+
+                <div com="seller" class="col col-sm mb-0 text-center p-3 px-1 px-sm-3" onclick="pdtabclick(this)" role="alert" id="ovf">
+
+                    <span class="d-none d-sm-block">Diğer Satıcılar</span>
+                    <span class="d-block d-sm-none" >Satıcılar</span>
+                </div>
+
+            </div>
                 
 
-                        <div class="p-5" id="dsccrd">
-                            <script src="{% static 'pdpage.js'%}"></script>
-                            <span style="font-weight:500">Acer Nitro 5 Intel i5-11400H Islemci<br>
-                                Nvidia GeFORCE GTX 1650 4 GB Harici Ekran Karti<br>
-                                15.6'' FHD 144HZ Ekran ESHELL Isletim sistemi<br>
-                                Nvidia GeFORCE GTX 1650 4 GB Harici Ekran Karti<br>
-                                Nvidia GeFORCE GTX 1650 4 GB Harici Ekran Karti Nvidia GeFORCE GTX <br>
-                                15.6'' FHD 144HZ Ekran ESHELL Isletim sistemi<br>
-                                Nvidia GeFORCE GTX 1650 4 GB Harici Ekran Karti<br>
-                                15.6'' FHD 144HZ Ekran ESHELL Isletim sistemi<br>
-                                
+            <div class="p-md-5 p-2" id="pdtbcont">
+
+                <div id='tabdesc'>
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="col p-4">
+                            <div class="">
+                                <img class="" src="/media/images/1.jpg" style="object-fit: fill;">
+                            </div>
+                        </div>
+                        <div class="col p-5" id="pdtbdesc">
+                            <span style="font-weight:400 !important">İşlemci Intel® Core™ i5-12450H (12M Cache, up to 4.40 GHz)<br>
+                                İşletim Sistemi FreeDOS<br>
+                                Ekran 15.6" FHD (1920*1080), 144Hz<br>
+                                Ekran Kartı RTX4050, GDDR6 6GB<br>
+                                Hafıza DDR IV 8GB (8GB*1, 3200MHz)<br>
+                                Hafıza yuvası 2 Slot<br>
+                                Maksimum Hafıza Max 64GB<br>
+                                HDD 512GB NVMe SSD<br>
+                                Depolama Kapasitesi "1x M.2 SSD slot (NVMe PCIe Gen4) 1x 2.5"" SATA HDD"<br>
+                                Ön Kamera HD type (30fps@720p)<br>
+                                Klavye Single Backlit Keyboard (Red)<br>
+                                Pil 3-Cell, Li-Polymer, 52.4Whr<br>
+                                Güç Adaptörü 120W adaptör<br>
+                                Boyutlar 359 x 254 x 21.7 mm<br>
+                                Ağırlık 1.86kg<br>
                             </span>
                         </div>
-
+                    </div>
                 </div>
-
+            </div>
         </div>
     </div>
 </div>
 
-
-<script>function pdtabclick(elem){
-    var div2=document.getElementById("pddetail");
-
-    var activediv=div2.getElementsByClassName("active")
-    activediv[0].setAttribute("class",activediv[0].getAttribute("class").replace(" active",""));
-    elem.className += " active";
-  
-  
-  
-      };
+{% load static %}
+<script src="{% static 'pdpage.js'%}"></script>
+<script>
       function slideclick(elem){
         var imgdiv=document.getElementById("slides");
         var imgs=imgdiv.getElementsByTagName("img");

@@ -415,3 +415,19 @@ def stack(request):
         
         departure = request.GET.get("idofselect").split("-")[0]
     return render(request,"sdasf.html")
+
+def pdpage(request,str):
+    if str=="installment":
+        return HttpResponse("<div id='tabinstallment' class='alert alert-danger'>Taksit bilgileri listelenecek</div>")
+    if str=="return":
+        
+        return HttpResponse("<div id='tabreturn' class='alert alert-warning'>İade bilgileri listelenecek</div>")
+    if str=="seller":
+        
+        return HttpResponse("<div id='tabseller' class='alert alert-primary'>Farklı satıcılar listelenecek</div>")
+    if str=="desc":
+        
+        return HttpResponse("<div id='tabdesc' class='alert alert-secondary'>Açıklama listelenecek</div>")
+    if str=="comment":
+        
+        return HttpResponse("<div id='tabcomment' class='alert alert-success'>Yorumlar listelenecek</div>")
