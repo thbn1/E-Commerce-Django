@@ -75,7 +75,7 @@ html {
     border-right:solid 1px #cfd3d6;
 }
 #pddetail .active{
-    border-bottom: solid 2px #dd9f1a;
+    border-bottom: solid 3px #dd9f1a;
     background-color: #f1f1f1;
 }
 #pddetail div:first-child {
@@ -371,14 +371,14 @@ html {
 
     }
     #contentrating svg{
-        height:0.9rem
+        height:1.1rem
     }
     #pp-revcount{
         font-size:14px !important;
         font-weight:500 !important;
     }
     #pp-price{
-        font-size: 19px !important;
+        font-size: 21px !important;
     }
     .pdsld img{
         height: 35px;
@@ -399,6 +399,9 @@ html {
 }
 #pdtbdesc{
     
+}
+#pdtbcont{
+    background-color: #f0f0f0;
 }
     @media only screen and (min-width: 576px) {
         #pp-revcount{
@@ -423,7 +426,7 @@ html {
             font-size:17px !important;
         }
         #contentrating svg{
-            height:1.2rem
+            height:1.3rem
         }
         .pdsld img{
             height: 40px;
