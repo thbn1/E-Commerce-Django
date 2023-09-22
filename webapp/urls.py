@@ -35,6 +35,7 @@ urlpatterns = [
     path('listpagination', views.listview_with_pagination),
     path("deneme",views.testing),
     path("ajaxlisting",views.ajaxlist,name="ajaxlist"),
+   
     path("stack",views.stack)
 ]
 from django.conf import settings

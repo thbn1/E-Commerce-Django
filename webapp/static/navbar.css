@@ -18,8 +18,8 @@ body{
     --bg: #ffffff;
     --navbg:#292929;
     --color:#ff9100;
-    --thema:#705c44;
-    --themabg:#ff88000c;
+    --thema:#a8722f;
+    --themabg:#ff88001e;
     }
     
 *{
@@ -57,7 +57,35 @@ html {
     display:none;
   }
 #slides .active{
-    outline: 3px solid #4f4661;
+    outline: 2px solid #4f4661;
+}
+#pdtcont{
+    border: solid 1px #cfd3d6;
+    border-radius: 5px;
+}
+#pddetail {
+
+    margin-right: 0px;
+    margin-left: 0px;
+   
+}
+#pddetail div{
+    border-bottom: solid 2px #b1b7bb;
+    border-right:solid 1px #cfd3d6;
+    border-right:solid 1px #cfd3d6;
+}
+#pddetail .active{
+    border-bottom: solid 2px #dd9f1a;
+    background-color: #f1f1f1;
+}
+#pddetail div:first-child {
+    border-radius: 5px 0px 0px 0px;
+
+}
+#pddetail div:last-child {
+    border-radius: 0px 5px 0px 0px;
+    border-right: 0px;
+
 }
 
 #slides{
@@ -90,6 +118,7 @@ html {
         overflow: hidden; /* keeps the element from overflowing its parent */
       
 }
+
 .scroll2 {
 
 
@@ -351,11 +380,22 @@ html {
         font-size: 17px !important;
     }
     .pdsld img{
-        max-height: 35px;
+        height: 35px;
+        width: 35px;
+        object-fit: contain;
     }
     #contentname{
         font-size:15px !important;
     }
+    #ovf span{
+    
+        text-overflow: ellipsis; /* enables ellipsis */
+
+        overflow: hidden; /* keeps the element from overflowing its parent */
+        font-size: 11px;
+        font-weight:600 !important;
+        
+}
     @media only screen and (min-width: 576px) {
         #pp-revcount{
             font-size:15px !important;
@@ -363,7 +403,13 @@ html {
         #pp-price{
             font-size:19px !important;
         }
-
+        #ovf span{
+    
+      
+            font-size: 12px !important;
+            font-weight:600 !important;
+            
+    }
        }
 
 
@@ -376,8 +422,11 @@ html {
             height:1.2rem
         }
         .pdsld img{
-            max-height: 40px;
+            height: 40px;
+            width: 40px;
+            object-fit: contain;
         }
+        
 
      }
     
