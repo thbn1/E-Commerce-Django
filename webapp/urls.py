@@ -30,6 +30,7 @@ urlpatterns = [
     path('urunler/', views.index),
     path('upload', views.image_upload_view),
     path('list', views.listview),
+    path('list2', views.listview2),
     path('ara', views.search),
     path('listtest', views.listtest),
     path('listpagination', views.listview_with_pagination),

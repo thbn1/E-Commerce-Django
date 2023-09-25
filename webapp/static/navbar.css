@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 
 html,
 body {
@@ -18,8 +18,8 @@ body{
     --bg: #ffffff;
     --navbg:#292929;
     --color:#ff9100;
-    --thema:#a8722f;
-    --themabg:#ff88001e;
+    --thema:#2f68a8;
+    --themabg:rgba(127, 159, 189, 0.118);
     }
     
 *{
@@ -39,7 +39,7 @@ html {
     --bs-alert-link-color: var(--bs-dark-text-emphasis);
   }
 .alert-thema svg{
-    fill:#ff8800
+    fill:#0033be
 }
 #pp-description {
 
@@ -144,9 +144,11 @@ html {
   
  }
  #addbtn{
-    background-color: #4f4661;
-    color: #ebebeb;
+    background-color: #2d656d;
+    color: #f5f5f5;
     border-radius: 0px;
+   
+ 
 
  }
 #productcontent{
@@ -356,6 +358,9 @@ html {
         margin-bottom:2px;
     }
 
+    #comrating{
+      
+    }
 
     .box54{
         height: 100%;
@@ -401,7 +406,7 @@ html {
     
 }
 #pdtbcont{
-    background-color: #f0f0f0;
+    
 }
     @media only screen and (min-width: 576px) {
         #pp-revcount{
