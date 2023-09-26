@@ -32,12 +32,11 @@ urlpatterns = [
     path('list', views.listview),
     path('list2', views.listview2),
     path('ara', views.search),
-    path('listtest', views.listtest),
     path('listpagination', views.listview_with_pagination),
     path("deneme",views.testing),
     path("ajaxlisting",views.ajaxlist,name="ajaxlist"),
     path("pdpage/<str:str>",views.pdpage,name="pdpage"),
-    path("stack",views.stack)
+
 ]
 from django.conf import settings
 from django.conf.urls.static import static

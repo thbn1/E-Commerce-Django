@@ -8,7 +8,7 @@
     <title>TFT Comps</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lobster&family=Open+Sans&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     {%load static%}
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'bs/bootstrap.min.css'%}">
 
     {%load static%}
     <link rel="stylesheet" href="{% static 'navbar.css'%}">
@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg text-light ms-auto mb-0 mt-0">
     <div id="cont" class="container-xxl text-nowrap">
       {%load static%}
-      <a id="logo" href="#" class="logo ms-0 me-1 mt-1"><img src="{% static 'ses.png'%}"width="63" height="63"><span></span></a>  
+      <a id="logo" href="#" class="logo ms-0 me-1 mt-1"><img src="{% static 'iconvs/ses.png'%}"width="63" height="63"><span></span></a>  
       <div class="d-flex ms-5 gap-5" id="navcont">
         <a class="nav-link text-nowrap" aria-current="page" href="/index">Ana Sayfa</a>
         <div class="dropdown">
@@ -38,7 +38,7 @@
           
           <input name="q" id="srchinput" class="form-control" type="text" placeholder="Ürün adı giriniz..." value>
           <div class="text-center">
-            <img type="submit" class="searchbar-icon" src="{% static 'search-icon.svg'%}" alt="search icon"width="16" height="16">
+            <img type="submit" class="searchbar-icon" src="{% static 'iconvs/search-icon.svg'%}" alt="search icon"width="16" height="16">
           </div>
         
         </div>
@@ -85,9 +85,9 @@
       </div>
     </div>
   </div>
-  <script src="{% static 'bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'bs/bootstrap.bundle.min.js'%}"></script>
   
-  <script src="{% static 'jquery3.7.0.min.js'%}"></script>
+  <script src="{% static 'bs/jquery3.7.0.min.js'%}"></script>
   {% block content %}{% endblock %}
 </div>
 </body>
