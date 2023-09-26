@@ -13,7 +13,18 @@ body {
 body{
 
 }
+nav{
+    background-color:var(--navbg);
 
+    background: -webkit-radial-gradient(circle, #6e7b81 0%, #00525F 100%);
+    background: radial-gradient(circle, #6e8081 0%, #00525fe3 100%);
+    background:  #002b31b2;
+    /*
+    background: #a7b0bc;
+    background: -webkit-radial-gradient(circle, #a7b0bc 0%, #263a56 100%);
+    background: radial-gradient(circle, #a7b0bc 0%, #263a56 100%);
+    */
+}
 :root{
     --bg: #ffffff;
     --navbg:#292929;
@@ -146,9 +157,10 @@ html {
   
  }
  #addbtn{
-    background-color: #2d656d;
+    background-color: #448491;
     color: #f5f5f5;
     border-radius: 0px;
+    
    
  
 
@@ -163,6 +175,9 @@ html {
 #prdcard{
    
 }
+#fltbtn{
+    background-color: #ffb120;
+}
 #contentrating span{
 
 }
@@ -171,17 +186,7 @@ html {
 
 @media (min-width: 1400px) { }
 
-    nav{
-        background-color:var(--navbg);
-        background: #6e7b81;
-        background: -webkit-radial-gradient(circle, #6e7b81 0%, #102936 100%);
-        background: radial-gradient(circle, #6e7b81 0%, #102936 100%);
-        /*
-        background: #a7b0bc;
-        background: -webkit-radial-gradient(circle, #a7b0bc 0%, #263a56 100%);
-        background: radial-gradient(circle, #a7b0bc 0%, #263a56 100%);
-        */
-    }
+
     nav a{
 
     }
