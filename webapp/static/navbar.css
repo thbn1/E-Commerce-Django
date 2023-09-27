@@ -274,7 +274,10 @@ nav{
     #zwx3{background-color: #3c6b5d!important;}
     #zwx4{background-color: #3c4c72!important;}
     #zwx5{background-color: #5c3d69!important;}
-    
+    #tabdesc{
+        background-color: #fcfcfc;
+
+    }
     #srch .dropdown-menu li {
         position: relative;
         }

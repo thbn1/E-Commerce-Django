@@ -551,11 +551,9 @@ def loaddatabase(request):
 
             try:
                 link=product.get_attribute('href')
-                with open('products.txt', 'w+') as f:
-                    
-                    # write elements of list
-                
-                    f.write('%s\n' %link)
+                with open("products.txt", "a") as a_file:
+                    a_file.write("\n")
+                    a_file.write(link)
             except:
                 continue
 
