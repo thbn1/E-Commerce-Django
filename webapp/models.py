@@ -21,6 +21,7 @@ class Product(models.Model):
     star5=models.IntegerField(default=0)
     productratingcount=models.IntegerField(default=0)
     productrating=models.IntegerField(default=0)
+    productcards=models.CharField(max_length=255,default="")
     
     def addstar(self,star):
        

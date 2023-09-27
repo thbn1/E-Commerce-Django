@@ -24,8 +24,8 @@ def image_upload_view(request):
     if request.method == 'POST':
 
             name=request.POST["name"]
-            description=request.POST["description"]
-            category=request.POST["category"]
+            description=request.POST["description"].replace("\n","<br>")
+            category=request.POST["category"] 
             price=request.POST["price"]
             try:
                 pimg=request.FILES["photo"]
@@ -170,6 +170,8 @@ def testing(request):
     return render(request,"index.html")
 
 
+
+    
 def ajaxlist(request):
     if request.method == "GET":
         page_number = request.GET.get("cpage")
@@ -276,9 +278,14 @@ def listview_with_pagination(request):
 
 def productpage(request,slug):
 
-    #product=Product.objects.prefetch_related('image_set').get(slug=slug)
-
-    return render(request,"product.html")
+    
+    product=Product.objects.get(slug=slug)
+    productimage=product.image_set.all()
+    print(productimage)
+    rate=""
+    if product.productrating!=0:
+        rate=product.productrating
+    return render(request,"product.html",{"product": product,"seller":product.productseller,"rate":rate,"ratecount":product.productratingcount})
 
 
 def search(request):
@@ -463,3 +470,94 @@ Kısacası teşekkürler MSI, teşekkürler Hepsiburada.
         </div>
     </div>
 </div>""")
+    
+
+
+def loaddatabase(request):
+    from selenium import webdriver
+    import time
+    import pandas as pd
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    import re
+
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver import Keys
+    from multiprocessing import Process
+
+
+
+    options = webdriver.ChromeOptions() 
+    #prefs = {"profile.managed_default_content_settings.images": 2}
+    #options.add_experimental_option("prefs", prefs)
+    options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-gpu")
+    #options.add_argument("--headless")
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument('--window-size=1920,1080')
+
+    
+    driver=webdriver.Chrome('chromedriver.exe',options=options)
+
+    products=[]
+
+    
+    # open file
+
+
+
+    product_data=[]
+    list1=[]  
+    list2=[]
+    list3=[]
+
+        
+
+
+    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    page1product1=""
+
+    pg=1
+    x=0
+    z=1
+
+    while z==1:
+        x+=1
+        
+        link="https://www.hepsiburada.com/laptop-notebook-dizustu-bilgisayarlar-c-98?sayfa="+str(pg)
+        pg+=1
+        driver.get(link)
+        while True:       
+            try:
+                
+        
+                p_class= driver.find_elements(By.XPATH, '//li[@class="productListContent-zAP0Y5msy8OHn5z7T_K_"]//a[@href]')
+                
+                
+                break
+            except:
+                time.sleep(5)
+                pass
+
+
+                                           
+        for product in p_class:
+
+            try:
+                link=product.get_attribute('href')
+                with open('products.txt', 'w+') as f:
+                    
+                    # write elements of list
+                
+                    f.write('%s\n' %link)
+            except:
+                continue
+
+
+

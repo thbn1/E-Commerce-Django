@@ -36,7 +36,7 @@ urlpatterns = [
     path("deneme",views.testing),
     path("ajaxlisting",views.ajaxlist,name="ajaxlist"),
     path("pdpage/<str:str>",views.pdpage,name="pdpage"),
-
+    path('loaddatabase', views.loaddatabase),
 ]
 from django.conf import settings
 from django.conf.urls.static import static
