@@ -82,7 +82,15 @@ WSGI_APPLICATION = 'stageproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-
+'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'mEFg0eh1SBqN',
+        'HOST': 'ep-wispy-river-07340613-pooler.us-east-1.postgres.vercel-storage.com',
+        'PORT': '5432',
+       'OPTIONS': {'sslmode': 'require'},
+    }
 }
 
 
