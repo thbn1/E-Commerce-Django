@@ -18,7 +18,5 @@
           "src": "/(.*)",
           "dest": "stageproject/wsgi.py"
       }
-  ],
-
-  "outputDirectory": "staticfiles_build"
+  ]
 }
