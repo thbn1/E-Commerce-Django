@@ -89,7 +89,7 @@ DATABASES = {
         'PASSWORD': 'mEFg0eh1SBqN',
         'HOST': 'ep-wispy-river-07340613-pooler.us-east-1.postgres.vercel-storage.com',
         'PORT': '5432',
-       'OPTIONS': {'sslmode': 'require'},
+       #'OPTIONS': {'sslmode': 'require'},
     }
 }
 
