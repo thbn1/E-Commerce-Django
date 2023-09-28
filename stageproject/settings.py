@@ -128,8 +128,8 @@ USE_TZ = True
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-STATIC_URL = '/static'
-STATICFILES_DIRS = os.path.join(BASE_DIR, '/static'),
+STATIC_URL = 'static/'
+STATICFILES_DIRS = BASE_DIR / "webapp"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'webapp/static')
 
 # Default primary key field type
