@@ -10,9 +10,6 @@ body {
 .container{
     background-color: #ffffff;
 }
-body{
-
-}
 
 :root{
     --bg: #ffffff;
@@ -50,12 +47,7 @@ html {
 
     -webkit-box-orient: vertical;
 }
-#btnul a{
-    background-color:#ccd0d323;
-}
-#btnul .active{
-    background-color:#1e4361 !important;
-}
+
 #cardprice{
     color:#494949
 }
@@ -166,19 +158,12 @@ html {
  
 
  }
-#productcontent{
-
-}
 
 .asdz{
     fill:radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(112,54,66,1) 100%);
 }
-#prdcard{
-   
-}
-#contentrating span{
 
-}
+
 nav{
 
     background-color:#102936;
@@ -194,10 +179,7 @@ nav{
 @media (min-width: 1400px) { }
 
 
-    nav a{
 
-    }
-    
     #navbarNavDropdown{
         max-width: 200px;
     }
@@ -253,10 +235,6 @@ nav{
 
     }
 
-    #srch .dropdown .btn.btn-secondary.dropdown-toggle:active {
-        
-        
-      }
     #srchinput{
         background-color: transparent;
         border: none;
@@ -306,9 +284,6 @@ nav{
         width: 100%;
     }
 
-    #prdprice{
-        
-    }
     .prdbtn{
 
         border:0px solid;
@@ -375,9 +350,6 @@ nav{
         margin-bottom:2px;
     }
 
-    #comrating{
-      
-    }
 
     .box54{
         height: 100%;
@@ -419,12 +391,7 @@ nav{
         font-weight:600 !important;
         
 }
-#pdtbdesc{
-    
-}
-#pdtbcont{
-    
-}
+
     @media only screen and (min-width: 576px) {
         #pp-revcount{
             font-size:15px !important;
@@ -577,13 +544,6 @@ nav{
         }
         #srch img{
             margin-top: 9px !important;
-        }
-        #logo{
-         
-    
-        }
-        .offcanvas.offcanvas-end{
-            
         }
 
       }
