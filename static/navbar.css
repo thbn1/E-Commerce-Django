@@ -47,12 +47,7 @@ html {
 
     -webkit-box-orient: vertical;
 }
-#btnul a{
-    background-color:#ccd0d323;
-}
-#btnul .active{
-    background-color:#1e4361 !important;
-}
+
 #cardprice{
     color:#494949
 }
