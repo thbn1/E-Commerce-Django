@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["localhost","127.0.0.1","192.168.1.109","192.168.1.105","192.168.1.113","192.168.1.103","192.168.1.106","192.168.1.102",".vercel.app"]
 
 
-# Application definition
+# Application definition    
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
-    'debug_toolbar',
     'django.contrib.postgres',
 
 ]
@@ -51,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     "debug_toolbar.middleware.DebugToolbarMiddleware",
+
 ]
 
 ROOT_URLCONF = 'stageproject.urls'
@@ -83,13 +82,14 @@ WSGI_APPLICATION = 'stageproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '1',
-        'HOST': 'localhost',
-        'PORT': '5432',        
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'mEFg0eh1SBqN',
+        'HOST': 'ep-wispy-river-07340613-pooler.us-east-1.postgres.vercel-storage.com',
+        'PORT': '5432',
+       #'OPTIONS': {'sslmode': 'require'},
     }
 }
 
@@ -116,9 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'tr'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Istanbul'
+TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
@@ -130,8 +130,12 @@ USE_TZ = True
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATIC_URL = 'static/'
-STATIC_ROOT = '/webapp/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+WSGI_APPLICATION = 'vercel_app.wsgi.app'
