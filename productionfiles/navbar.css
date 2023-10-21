@@ -21,7 +21,7 @@ body{
     --save1:#d8745c;
     --save2:#25403d;
     --thema:#2f68a8;
-    --themabg:rgba(127, 159, 189, 0.118);
+    --themabg:rgba(255, 255, 255, 0.118);
     }
     
 *{
@@ -33,6 +33,9 @@ body{
 html {
   font-size: 1rem;
   
+}
+#stickybar input{
+   pointer-events: none;
 }
 #stickybar li{
     cursor:pointer;  

@@ -282,7 +282,13 @@
               });
             
               function checkinp(elem){
-                elem.getElementsByTagName("input")[0].click()
+                if(elem.getElementsByTagName("input")[0].checked===true){
+                    elem.getElementsByTagName("input")[0].checked=false;
+                }
+                else{
+                    elem.getElementsByTagName("input")[0].checked=true;
+                }
+            
               }
             
         </script>
