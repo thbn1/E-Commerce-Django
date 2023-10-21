@@ -203,17 +203,23 @@ table a{
 .asdz{
     fill:radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(112,54,66,1) 100%);
 }
-
+#prdcard{
+    border-color:  #8d8d8d44 !important;
+}
 #prdcard:hover { 
-   
+    border-color: transparent !important;
+    transition: 0.3s;
+    background-color: #ffffff;
     box-shadow:
-      
+     
     
-      0.3em 0.3em 1em rgba(14, 44, 73, 0.6) !important;
-      border:none !important;
+    0.3em 0.3em 1.5em rgba(14, 44, 73, 0.45) !important;
+      
       
   }
-
+  #prdcard:hover > #addbtn {
+    outline:solid 1px #2b3f63 !important;
+  }
 nav{
 
     background-color:#102936;
