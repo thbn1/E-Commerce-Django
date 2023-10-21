@@ -4,23 +4,23 @@
 <div class="container-lg pb-5 shadow px-0">
     <div class="p-0">
         <div class="row row-cols-1 row-cols-lg-2 m-0 rounded-1 mh-75">
-            <div class="col-12 column-xl-5 p-1 p-md-4 pb-md-0 ">
+            <div class="col-12 column-xl-5 p-1 p-md-2 pb-md-0 ">
                 <div id="slidebar2" class="pb-0 d-flex align-items-center flex-column-reverse flex-xl-row scroll3" style="">
                     <div id="slides" class="d-flex flex-row flex-xl-column p-1 rounded-0 gap-2 p-1 pdsld mb-0 pe-3" style="overflow-x:auto !important" >
-                        <img class="rounded-1 active" src="/media/{{product.productimage}}" style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/2.jpg" style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/3.jpg" style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/4.jpg" style=""onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/5.jpg" style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/6.jpg" style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/10.jpg"style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/8.jpg" style="" onclick="slideclick(this)">
-                        <img class="rounded-1" src="/media/images/9.jpg" style="" onclick="slideclick(this)">
+                        <img class="rounded-1 active" src="{{product.productimage}}" style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/2.jpg" style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/3.jpg" style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/4.jpg" style=""onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/5.jpg" style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/6.jpg" style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/10.jpg"style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/8.jpg" style="" onclick="slideclick(this)">
+                        <img class="rounded-1" src="/static/media/images/9.jpg" style="" onclick="slideclick(this)">
 
 
                     </div>
                     <div class="p-2">
-                        <img id="mainslide" class="rounded-1 w-100" src="/media/{{product.productimage}}" style="object-fit: contain;" >
+                        <img id="mainslide" class="rounded-1 w-100" src="{{product.productimage}}" style="object-fit:cover;max-height:550px;max-width:550px" >
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                         <div class="text-center text-lg-start pb-4" id="contentname">
                             <span id="contentname" style="font-weight:500 !important">{{product.productname}}<span>
                         </div>
-                        <div class="row row-cols-2 row-cols-sm-2 pt-5">
+                        <div class="row row-cols-2 row-cols-sm-2 pt-3">
                             
                             <div class="col-7 d-flex justify-content-start justify-content-sm-start pt-2" id="contentprice">
                                 <span id="pp-price" class="" style="font-weight:700 !important">{{product.productprice}} TL<span>
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-2 row pt-4">
+                        <div class="mt-2 row pt-5">
                             <div class="col-12 col-md py-3" >
                                 
                                 <button id="addbtnpd" type="button" class="btn rounded-1 p-3 py-3 w-100" ><span style="font-size:14px !important;font-weight:400 !important">Sepete Ekle<span></button>
@@ -88,69 +88,45 @@
                         </div>
 
                         <div class="pb-5" style="">
-                            <div class="pt-4 row row-cols-4 text-center mb-0 mt-5 d-none d-md-flex px-2" style="">
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsc1crd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">İşlemci</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">AMD RYZEN 5</span> 
-                                    </div>
-                                </div>
+                            <div class="pt-2 row row-cols-4 text-center mb-0 mt-2 d-none d-md-flex px-2" style="">
+                                {%for key,value in product.productcards.items%}
                                 <div class="col px-1">
                                     <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                            <div style="">
-                                            <span class="" style="font-size:11px !important;font-weight:500 !important">SSD</span><br>
-                                            </div>
-                                            <span class="" style="font-size:13px !important;font-weight:600 !important">512 GB</span> 
-                                            
+                                        <span class="" style="font-size:11px !important;font-weight:500 !important">{{key}}</span><br>
+                                        <span class="" style="font-size:13px !important;font-weight:600 !important">{{value}}</span> 
                                     </div>
                                 </div>
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">RAM</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">16 GB</span> 
-                                    </div>
-                                </div>
-
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">Ekran</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">144 HZ IPS</span> 
-                                        
-                                    </div>
-                                </div>
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">İşletim Sistemi</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">FREE DOS</span> 
-                                    </div>
-                                </div>
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">Ekran Kartı</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">RTX 3050</span> 
-                                    </div>
-                                </div>
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">İşletim Sistemi</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">FREE DOS</span> 
-                                    </div>
-                                </div>
-                                <div class="col px-1">
-                                    <div class="alert alert-light p-2 mb-0 mt-2" role="alert" id="dsccrd">
-                                        <span class="" style="font-size:11px !important;font-weight:500 !important">İşletim Sistemi</span><br>
-                                        <span class="" style="font-size:13px !important;font-weight:600 !important">FREE DOS</span>
-                                    </div>
-                                </div>
+                                {%endfor%}
+                
 
                             </div>
                         </div>
-
+                        <div id="botdivp" class="d-flex justify-content-between mt-4">
+                            <a style="font-size=14px;text-decoration:none" href="">
+                               
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="gray" height="23" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                                Beğenilenlere ekle 
+                            </a>
+                            <a style="font-size=14px;text-decoration:none" href="">
+                               
+                                
+                            <svg xmlns="http://www.w3.org/2000/svg" height="21" viewBox="0 -960 960 960" fill="gray" width="24"><path d="M120-40v-640q0-33 23.5-56.5T200-760h400q33 0 56.5 23.5T680-680v640L400-160 120-40Zm80-122 200-86 200 86v-518H200v518Zm560 2v-680H240v-80h520q33 0 56.5 23.5T840-840v680h-80ZM200-680h400-400Z"/></svg>
+                                Listeye ekle
+                            </a>
+                            <a style="font-size=14px;text-decoration:none" href="">
+                               
+                                
+                                
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="gray" height="25" viewBox="0 -960 960 960" width="24"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
+                                    Link paylaş 
+                                </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <div id="pdtcont" class="">
+        <div id="pdtcont" class="mt-2">
 
             <div id="pddetail" class="row row-cols-5">
 
@@ -189,19 +165,27 @@
 
             <div class="" id="pdtbcont">
 
-                <div class="p-md-5 p-3" id='tabdesc'>
+                <div class="p-md-3 pt-md-2 p-3 " style="" id='tabdesc'>
                     <div class="row row-cols-1 row-cols-sm-2 pt-3">
                         <div class="col mb-5">
                             <div class="text-center">
-                                <img class="align-middle" src="/media/{{product.productimage}}" style="width:100%; height:auto;display:block;object-fit:contain !important;mix-blend-mode: multiply;">
+                                <img class="align-middle" src="{{product.productimage}}" style="width:100%; height:auto;display:block;object-fit:contain !important;mix-blend-mode: multiply;">
                             </div>
                         </div>
-                        <div class="col px-3" id="pdtbdesc">
-                            <div class="text-center">
-                                <span style="font-size:15px !important;font-weight:600 !important">{{product.productname}}</span><br><br><br>
-                            </div>
-                            <span style="font-weight:500 !important">{{product.productdesc}}
-                            </span>
+                        <div class="col px-3" style="" id="pdtbdesc">
+                            <table class="table table-sm table-striped border border-1" >
+                                <caption></caption>
+                                <tbody>
+                                    {% for key,value in product.productdesc.items %}
+                                        <tr>
+                                            <th>{{key}}</th>
+                                            <td>
+                                                    <span>{{value}}</span>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

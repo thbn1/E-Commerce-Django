@@ -7,13 +7,13 @@ class Product(models.Model):
     id=models.AutoField(primary_key=True)
     productname = models.CharField(max_length=255,null=False,unique=False)
     
-    productdesc=models.TextField()
+    productdesc=models.JSONField()
     productcategory=models.CharField(max_length=255)
     productprice=models.FloatField()
     productoldprice=models.FloatField(default=0)
     productseller= models.ForeignKey(User, on_delete=models.CASCADE)    
     slug = models.SlugField(max_length=255,null=True)
-    productimage = models.ImageField(upload_to='images',null=True)  
+    productimage = models.CharField(max_length=255,null=True)  
     star1=models.IntegerField(default=0)
     star2=models.IntegerField(default=0)
     star3=models.IntegerField(default=0)
@@ -21,7 +21,7 @@ class Product(models.Model):
     star5=models.IntegerField(default=0)
     productratingcount=models.IntegerField(default=0)
     productrating=models.IntegerField(default=0)
-    productcards=models.CharField(max_length=255,default="")
+    productcards=models.JSONField()
     
     def addstar(self,star):
        

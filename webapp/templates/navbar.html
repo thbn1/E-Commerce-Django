@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="{% static 'navbar.css'%}">
   </head>
 <body>
-<div id="colortop" class="container-fluid mb-0 pb-0">
+
+
+<div class="vh-100">
+  <div id="colortop" class="container-fluid mb-0 pb-0">
     <div class="row">
         <div class="col px-2 py-2" id="zwx1">
         </div> 
@@ -28,8 +31,6 @@
         </div>
     </div>
 </div>
-
-<div class="vh-100">
   <nav class="navbar navbar-expand-lg text-light ms-auto mb-0 mt-0">
     <div id="cont" class="container-xxl text-nowrap">
       {%load static%}
@@ -41,9 +42,8 @@
           <span>Kategoriler</span>
           </a>
           <ul class="dropdown-menu" data-bs-theme="dark">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/list">Bilgisayar</a></li>
+
           </ul>
         </div>
       </div>
@@ -53,7 +53,7 @@
           
           <input name="q" id="srchinput" class="form-control" type="text" placeholder="Ürün adı giriniz..." value>
           <div class="text-center">
-            <img type="submit" class="searchbar-icon" src="{% static 'iconvs/search-icon.svg'%}" alt="search icon"width="16" height="16">
+            <button type="submit" style="border:none;background:none;margin:0px;padding:0px;" ><img class="searchbar-icon" src="{% static 'iconvs/search-icon.svg'%}" alt="search icon"width="16" height="16"></button>
           </div>
         
         </div>
@@ -69,8 +69,27 @@
             };}
       </script>
       <div id="logreg" class="d-flex gap-4 pe-2">
-        <a class="nav-link text-nowrap " type="submit"><svg height="18px" viewBox="0 0 576 512"><path fill="white" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg> Sepetim</a>
-        <a class="nav-link text-nowrap" aria-current="page" href="/login"><a class="nav-link text-nowrap " type="submit"><svg  height="18px" viewBox="0 0 448 512"><path fill="white" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></svg>  Giriş Yap</a>
+        <a class="nav-link text-nowrap pe-3" type="submit"><svg height="18px" viewBox="0 0 576 512"><path fill="white" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg> Sepetim</a>
+        {%if user.is_authenticated%}
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" href="/kategori" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span><svg  height="18px" viewBox="0 0 448 512"><path fill="white" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>  {{user.get_full_name}}</span>
+          </a>
+          <ul class="dropdown-menu" data-bs-theme="dark">
+            <li><a class="dropdown-item" href="/logout_request" disabled><svg xmlns="http://www.w3.org/2000/svg" height="19" fill="white" viewBox="0 -960 960 960" width="19"><path d="M760-200v-120H200v120h560Zm0-200v-160H200v160h560Zm0-240v-120H200v120h560ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"/></svg> Siparişlerim</a></li>
+            <li><a class="dropdown-item" href="/logout_request" disabled><svg style="" height="16px" viewBox="0 0 576 512"><path fill="white" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>  Sepetim</a></li>
+            <li><a class="dropdown-item" href="/logout_request" disabled><svg xmlns="http://www.w3.org/2000/svg" height="20" fill="white" viewBox="0 -960 960 960" width="20"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg> Hesabım</a></li>
+            <li><a class="dropdown-item" href="/logout_request"><svg xmlns="http://www.w3.org/2000/svg" height="18" fill="white" viewBox="0 -960 960 960" width="18"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg> Çıkış Yap</a></li>
+            
+
+
+          </ul>
+        </div>
+
+        
+        {%else%}
+        <a class="nav-link text-nowrap" aria-current="page" href="/login"><a class="nav-link text-nowrap " type="submit" href="/login"><svg height="18px" viewBox="0 0 448 512"><path fill="white" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>&nbsp;&nbsp;  Giriş Yap</a>
+        {%endif%}
       </div>
       <button onclick="mf(this)" id="toggler" class="navbar-toggler navbar-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
         <span class="navbar-toggler-icon"></span>
@@ -92,9 +111,8 @@
             <span>Kategoriler</span>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/list">Bilgisayar</a></li>
+
           </ul>
         </div>
       </div>

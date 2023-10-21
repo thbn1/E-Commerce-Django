@@ -34,6 +34,33 @@ html {
   font-size: 1rem;
   
 }
+#stickybar li{
+    cursor:pointer;  
+    user-select: none; 
+}
+#stickybar li:hover{
+    background-color: #0000001c ;
+}
+#addbtn:hover{
+    background-color: #112e53;
+}
+table a{
+    color:inherit;
+}
+#vwcont input::placeholder{
+    color:#b6b6b6;
+    font-size: 13px;
+    font-weight: 400;
+}
+#vwcont .zlink{
+    color:#727272;
+    text-decoration: none
+}
+.btnlog{
+    border:none !important;
+    background-color: #4385a8;
+    height:38px;
+}
 .alert-thema {
     --bs-alert-color: var(--thema);
     --bs-alert-bg: var(--themabg);
@@ -50,9 +77,15 @@ html {
 
     -webkit-box-orient: vertical;
 }
-
+#btnul a{
+    background-color:#ccd0d323;
+    color:inherit;
+}
+#btnul .active{
+    background-color:#1e4361 !important;
+}
 #cardprice{
-    color:#494949
+    color:#414141
 }
 #homediv{overflow-x:auto;}
 #homediv::-webkit-scrollbar{
@@ -146,15 +179,17 @@ html {
   
  }
  #addbtn{
-    background-color: #3F5665;
+    background-color: #355164;
     color: #f5f5f5;
     border-radius: 0px;
+    width: 100% !important;
+    
    
  
 
  }
  #addbtnpd{
-    background-color: #003c5f;
+    background-color: #195172;
     color: #f5f5f5;
     border-radius: 0px;
    
@@ -168,12 +203,17 @@ html {
 .asdz{
     fill:radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(112,54,66,1) 100%);
 }
-#prdcard{
-   
-}
-#contentrating span{
 
-}
+#prdcard:hover { 
+   
+    box-shadow:
+      
+    
+      0.3em 0.3em 1em rgba(14, 44, 73, 0.6) !important;
+      border:none !important;
+      
+  }
+
 nav{
 
     background-color:#102936;
@@ -335,9 +375,10 @@ nav{
    -webkit-line-clamp: 2; /* number of lines to show */
            line-clamp: 2; 
    -webkit-box-orient: vertical; 
-        text-overflow: ellipsis;
+        text-overflow: "-";
         word-wrap:break-word;
-        font-weight: 500 !important;
+        
+        font-weight: 410 !important;
         font-size: 13px !important;
         margin-top: 0px !important;
 
@@ -349,7 +390,12 @@ nav{
         color:#cecece;
         font-size:32px;
     }
-    
+    #botdivp a{
+        color: #1e4361;
+    }
+    #botdivp svg{
+        fill: #1e5685;
+    }
     .rating-color{
         color:#fbc634 !important;
     }

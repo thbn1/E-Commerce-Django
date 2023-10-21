@@ -7,22 +7,19 @@ from django.shortcuts import render,redirect
 from django.utils.safestring import mark_safe
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from django.db.models import Prefetch
-from django.db.models import Q
+
 import random
 from webapp.models import Product,Image,Review
 from django.core.paginator import Paginator
-from django.db.models import Min
-from django.http import HttpResponseBadRequest, JsonResponse
-from django.core import serializers
-from django.db.models.functions import Round
+
+from django.http import JsonResponse
+
 from django.db.models import Avg
-from time import sleep
 
 def image_upload_view(request):
 
     if request.method == 'POST':
-
+            return HttpResponse("Yetkiniz yok")
             name=request.POST["name"]
             description=request.POST["description"].replace("\n","<br>")
             category=request.POST["category"] 
@@ -86,8 +83,13 @@ def image_upload_view(request):
 
 
 def index(request):
+    try:
+        products2=Product.objects.filter()[0:60]
+        products = random.sample(products2, 18)
+        return render(request, 'index.html', {'products': products})
 
-    return render(request,"index.html")
+    except: 
+        return render(request,"oldindex.html")
 
 
 def register(request):
@@ -163,10 +165,6 @@ def review(request):
 
 
 def testing(request):
-    ddd=Review.objects.all()
-    for prd in ddd:
-        prd.delete()
-
     return render(request,"index.html")
 
 
@@ -285,7 +283,7 @@ def productpage(request,slug):
     rate=""
     if product.productrating!=0:
         rate=product.productrating
-    return render(request,"product.html",{"product": product,"seller":product.productseller,"rate":rate,"ratecount":product.productratingcount})
+    return render(request,"product.html",{"product": product,"seller":product.productseller,"rate":rate,"ratecount":product.productratingcount,"cards":product.productcards})
 
 
 def search(request):
@@ -474,88 +472,78 @@ Kısacası teşekkürler MSI, teşekkürler Hepsiburada.
 
 
 def loaddatabase(request):
-    from selenium import webdriver
-    import time
-    import pandas as pd
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    import re
-
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
-    from selenium.webdriver import Keys
-    from multiprocessing import Process
+    pass
 
 
+def register_request(request):
+    if request.user.is_authenticated:
+        return redirect("/index")
+    else:
+        if request.method=="POST":
+            username = request.POST['username']
+        #   email = request.POST['email']
+            firstname = request.POST['firstname']
+            lastname = request.POST['lastname']
+            #password = request.POST['password']
+            #repassword = request.POST['repassword']
+            password="test123"
+            repassword="test123"
+            if password == repassword:
+                if len(firstname)<2:
+                    return render(request,"login.html",{"error":"isim uygun değil"})
+                if len(lastname)<2:
+                    return render(request,"login.html",{"error":"soyisim uygun değil"})
+        #       if len(email)<8 and "@" not in email:
+        #           return render(request,"blog/register.html",{"error":"mail adresiniz geçersiz"})
+                if len(username)<5:
+                    return render(request,"login.html",{"error":"kullanıcı adınız 5 haneden kısa"})
+                #if len(password)<8:
+                #    return render(request,"blog/register.html",{"error":"Şifreniz 8 haneden kısa"})
+                if User.objects.filter(username=username).exists():
+                    return render(request,"login.html",{"error":"Kullanıcı adı kullanımda."})
+                else:
+                    #if User.objects.filter(email=email).exists():
+                    #    return render(request,"blog/register.html",{"error":"email kullanımda."})
+                    
+                        user =User.objects.create_user(username=username,email="test@test.com",first_name=firstname,last_name=lastname,password=password)
+                        user.save()
+                        user = authenticate(request,username = username,password = "test123")
+                        if user is not None:
+                            login(request,user)
+                        return redirect("/index")
+                        
+            else:
+                return render(request,"login.html",{"error":"parola eşleşmiyor."})
+        else:
+            return render(request,'login.html')
+def getproducts(request):
+    pass
 
-    options = webdriver.ChromeOptions() 
-    #prefs = {"profile.managed_default_content_settings.images": 2}
-    #options.add_experimental_option("prefs", prefs)
-    options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-gpu")
-    #options.add_argument("--headless")
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument('--ignore-ssl-errors')
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument('--window-size=1920,1080')
-
-    
-    driver=webdriver.Chrome('chromedriver.exe',options=options)
-
-    products=[]
-
-    
-    # open file
-
-
-
-    product_data=[]
-    list1=[]  
-    list2=[]
-    list3=[]
-
+def login_request(request):
+    if request.user.is_authenticated:
+        return redirect("/index")
+    else:
+        print(str(request))
+        print(type(request))
+        if request.method =="POST":
+            print("a")
+            username = request.POST["username"]
+            print("b")
+            password = request.POST["password"]
+            print("c")
+            user = authenticate(request,username = username,password = "test123")
+            print("d")
+            if user is not None:
+                print("zuhaha")
+                login(request,user)
+                return redirect("/index")
+            else:
+                print(request)
+            
+                return render(request,"login.html")
+        else:
+            return redirect(request,"login.html")
         
-
-
-    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    page1product1=""
-
-    pg=1
-    x=0
-    z=1
-
-    while z==1:
-        x+=1
-        
-        link="https://www.hepsiburada.com/laptop-notebook-dizustu-bilgisayarlar-c-98?sayfa="+str(pg)
-        pg+=1
-        driver.get(link)
-        while True:       
-            try:
-                
-        
-                p_class= driver.find_elements(By.XPATH, '//li[@class="productListContent-zAP0Y5msy8OHn5z7T_K_"]//a[@href]')
-                
-                
-                break
-            except:
-                time.sleep(5)
-                pass
-
-
-                                           
-        for product in p_class:
-
-            try:
-                link=product.get_attribute('href')
-                with open("products.txt", "a") as a_file:
-                    a_file.write("\n")
-                    a_file.write(link)
-            except:
-                continue
-
-
-
+def logout_request(request):
+    logout(request)
+    return redirect("/index")
