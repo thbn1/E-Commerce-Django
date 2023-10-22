@@ -83,13 +83,15 @@ def image_upload_view(request):
 
 
 def index(request):
-    try:
-        products2=Product.objects.filter()[0:60]
-        products = random.sample(products2, 18)
-        return render(request, 'index.html', {'products': products})
 
-    except: 
-        return render(request,"oldindex.html")
+        products2=list(Product.objects.all())
+        
+        products1 = random.sample(products2, 6)
+        products2 = random.sample(products2, 6)
+        products3 = random.sample(products2, 6)
+        return render(request, 'index.html', {'products1': products1,'products2': products2,'products3': products3})
+
+
 
 
 def register(request):
