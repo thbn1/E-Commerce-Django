@@ -10,7 +10,11 @@ from django.core.asgi import get_asgi_application
 # Create your tests here.
 from selenium import webdriver
 import time
+<<<<<<< HEAD
 
+=======
+import pandas as pd
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import re
@@ -26,13 +30,18 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")
+<<<<<<< HEAD
 options.add_argument("--headless")
+=======
+#options.add_argument("--headless")
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-ssl-errors')
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument('--window-size=1920,1080')
 import urllib
+<<<<<<< HEAD
 options = webdriver.FirefoxOptions()
 driver = webdriver.Firefox(options=options)
 
@@ -40,6 +49,13 @@ driver = webdriver.Firefox(options=options)
 
 products=[]
 brands=["razer","monster","hp","asus","acer","dell"]
+=======
+driver=webdriver.Chrome('chromedriver.exe',options=options)
+
+
+products=[]
+brands=["apple", "huawei","msi","lenovo","razer","monster","hp","asus","acer","dell"]
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 for brand in brands:
     listlk=[]
     wpage=0
@@ -79,8 +95,12 @@ for brand in brands:
                     break
                 
                 site="HepsiBurada"
+<<<<<<< HEAD
             except Exception as error:
                 print(error)
+=======
+            except:
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
                 continue
             if link2 in listlk:
                 continue
@@ -167,6 +187,7 @@ for brand in brands:
                             ram=i.find_element(By.TAG_NAME,"td").text.upper().strip()
                             if ram!="BELIRTILMEMIŞ": 
                                 cards["Ağırlık"]=ram
+<<<<<<< HEAD
                     try:
                         Product.objects.create(productname=name, productdesc=desctable,productprice=price, productcategory="Bilgisayar",productimage=imgsrc,productcards=cards, productseller_id=2)
                         print("------------success------------")
@@ -176,5 +197,14 @@ for brand in brands:
 
                 except Exception as error:
                     print(error)
+=======
+                    
+                    Product.objects.create(productname=name, productdesc=desctable,productprice=price, productcategory="Bilgisayar",productimage=imgsrc,productcards=cards, productseller_id=11)
+                    print("------------success------------")
+                    break
+
+                except:
+                    
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
                     time.sleep(1)
                     

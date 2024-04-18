@@ -8,8 +8,14 @@ body {
 
 }
 .container{
+<<<<<<< HEAD
     background-color: #ffffff;
 }
+=======
+ 
+}
+footer a{text-decoration: none;}
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 body{
 
 }
@@ -21,7 +27,11 @@ body{
     --save1:#d8745c;
     --save2:#25403d;
     --thema:#2f68a8;
+<<<<<<< HEAD
     --themabg:rgba(127, 159, 189, 0.118);
+=======
+    --themabg:rgba(255, 255, 255, 0.118);
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
     }
     
 *{
@@ -30,14 +40,194 @@ body{
         font-size:13px!important;
         font-weight: 400 !important;
 }
+<<<<<<< HEAD
+=======
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+
+.gitlinkicon svg{
+    fill: #b1b1b1;
+}
+.gitlinkicon svg:hover{
+    fill: #ffffff;
+    cursor:pointer;
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 html {
   font-size: 1rem;
   
 }
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:productionfiles/media/navbar.css
+========
+.bottomfluid{
+    background-color: #303e50;
+    height: 300px;
+}
+#stickybar input{
+   pointer-events: none;
+}
+>>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94:productionfiles/navbar.css
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 #stickybar li{
     cursor:pointer;  
     user-select: none; 
 }
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:productionfiles/media/navbar.css
+========
+
+>>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94:productionfiles/navbar.css
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 #stickybar li:hover{
     background-color: #0000001c ;
 }
@@ -47,10 +237,41 @@ html {
 table a{
     color:inherit;
 }
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:productionfiles/media/navbar.css
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 #vwcont input::placeholder{
     color:#b6b6b6;
     font-size: 13px;
     font-weight: 400;
+<<<<<<< HEAD
+=======
+========
+#vwcont{
+    height: 750px;
+    position: relative;
+}
+#mainslide{
+
+}
+.logform{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left:-250px;
+  margin-top: -220px;
+  
+}
+#logform input:focus::placeholder {
+    color: transparent;
+  }
+#vwcont input::placeholder{
+    color:#b6b6b6;
+    font-size: 13px;
+    font-weight: 400; 
+>>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94:productionfiles/navbar.css
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 }
 #vwcont .zlink{
     color:#727272;
@@ -124,12 +345,20 @@ table a{
 }
 
 #slides{
+<<<<<<< HEAD
     background-color:#ffffff;
     max-width:672px;
 
 
     overflow-x: auto;
 }
+=======
+    background-color:#ffffffda;
+   
+    overflow-x: auto;
+}
+
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 #slides2{
     background-color:#d1d1d1;
 
@@ -139,9 +368,14 @@ table a{
     display:none;
   }
 #slidebar{
+<<<<<<< HEAD
     background: #9a9ac4;
     background: -webkit-linear-gradient(0deg, #9a9ac4 0%, #5e4869 100%);
     background: linear-gradient(0deg, #9a9ac4 0%, #5e4869 100%);
+=======
+    background: rgb(100,67,54);
+    background: linear-gradient(90deg, rgba(100, 67, 54, 0.8) 0%, rgba(107,102,63, 0.8) 25%, rgba(60,107,93, 0.8) 50%, rgba(60,76,114, 0.8) 75%, rgba(92,61,105, 0.8) 100%);
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 }
 #slidebar img{
     cursor: pointer;
@@ -203,6 +437,10 @@ table a{
 .asdz{
     fill:radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(112,54,66,1) 100%);
 }
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:productionfiles/media/navbar.css
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 
 #prdcard:hover { 
    
@@ -214,6 +452,28 @@ table a{
       
   }
 
+<<<<<<< HEAD
+=======
+========
+#prdcard{
+    border-color:  #8d8d8d44 !important;
+}
+#prdcard:hover { 
+    border-color: transparent !important;
+    transition: 0.3s;
+    background-color: #ffffff;
+    box-shadow:
+     
+    
+    0.3em 0.3em 1.5em rgba(14, 44, 73, 0.45) !important;
+      
+      
+  }
+  #prdcard:hover > #addbtn {
+    outline:solid 1px #2b3f63 !important;
+  }
+>>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94:productionfiles/navbar.css
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 nav{
 
     background-color:#102936;

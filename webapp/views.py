@@ -88,8 +88,19 @@ def index(request):
         products = random.sample(products2, 18)
         return render(request, 'index.html', {'products': products})
 
+<<<<<<< HEAD
     except: 
         return render(request,"index.html")
+=======
+        products2=list(Product.objects.all())
+        
+        products1 = random.sample(products2, 6)
+        products2 = random.sample(products2, 6)
+        products3 = random.sample(products2, 6)
+        return render(request, 'index.html', {'products1': products1,'products2': products2,'products3': products3})
+
+
+>>>>>>> 47d3cb61c9c82adf012191212584fc10d16e5a94
 
 
 def register(request):
