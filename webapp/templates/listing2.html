@@ -1,7 +1,7 @@
 {%extends "navbar.html"%}
 {%block content%}
-<div class="container-xxl">
-
+{%load static%}
+<div class="container-xxl px-1">
   <div class="row row-cols-1 row-cols-xl-2">
     <div class="col-12 col-xl-2 px-2 ">
       <div class="p-0 sticky-top mt-3 mb-2 " id="filterbar">
@@ -14,13 +14,13 @@
             </h2>
             <div id="collapseprice" class="accordion-collapse collapse show" data-bs-parent="#stickybar">
                 <div class="accordion-body p-4 pt-2">
-                    <span class="fw-medium" style="font-weight:500 !important">Fiyat Filtrele</span>
+                    <span class="fw-medium pt-1" style="font-weight:500 !important">Fiyat Filtrele</span>
                     <div class="row row-cols-2 text-center mt-2 mx-0" >
                         <div class="col">
-                        <input type="text" class="form-control" placeholder="Min.">
+                        <input type="text" class="form-control rounded-1" placeholder="Min.">
                         </div>
                         <div class="col">
-                        <input type="text" class="form-control" placeholder="Max.">
+                        <input type="text" class="form-control rounded-1" placeholder="Max.">
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
             <div id="collapsebrand" class="accordion-collapse collapse show" data-bs-parent="#stickybar">
                 <div class="accordion-body p-4 pt-2">
                     <span class="fw-medium" style="font-weight:500 !important">Marka Filtrele</span>
-                    <div class="text-start mt-2 py-1 border border-1 rounded-2 scroll2" style="height:200px;">
+                    <div class="text-start mt-2 py-1 border border-1 rounded-1 scroll2" style="height:200px;">
                         <ul class="list-group list-group-flush" >
                         <li class="list-group-item">
                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
@@ -80,14 +80,14 @@
         </div>
         <div class="border-top py-0 ">
             <h2 class="accordion-header">
-                <button class="accordion-button d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsebrand" aria-expanded="true" aria-controls="collapsebrand">
+                <button class="accordion-button d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsecategory" aria-expanded="true" aria-controls="collapsecategory">
                 Kategori Filtrele
                 </button>
             </h2>
-            <div id="collapsebrand" class="accordion-collapse collapse show" data-bs-parent="#stickybar">
+            <div id="collapsecategory" class="accordion-collapse collapse show" data-bs-parent="#stickybar">
                 <div class="accordion-body p-4 pt-2">
                     <span class="fw-medium" style="font-weight:500 !important">Kategori Filtrele</span>
-                    <div class="text-start mt-2 py-1 border border-1 rounded-2 scroll2" style="height:200px;">
+                    <div class="text-start mt-2 py-1 border border-1 rounded-1 scroll2" style="height:200px;">
                         <ul class="list-group list-group-flush" >
                         <li class="list-group-item">
                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
@@ -131,23 +131,23 @@
             <div id="collapsestar" class="accordion-collapse collapse show" data-bs-parent="#stickybar">
                 <div class="accordion-body p-4 pt-2">
                     <span class="fw-medium" style="font-weight:500 !important">Ürün Puanı</span>
-                    <div class="text-start mt-2 py-1 border border-1 rounded-2" style="">
+                    <div class="text-start mt-2 py-1 border border-1 rounded-1" style="">
                     <ul class="list-group list-group-flush" >
-                        <li class="list-group-item p-1">
+                        <li class="list-group-item p-1 ps-2">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                         <img height="13px" src = "/static/iconvs/star-orange.svg"/>
                         &nbsp;2 Yıldız ve üzeri
                         </label>
                         </li>
-                        <li class="list-group-item p-1">
+                        <li class="list-group-item p-1 ps-2">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             <img height="13px" src = "/static/iconvs/star-orange.svg"/>
                         &nbsp;3 yıldız ve üzeri
                         </label>
                         </li>
-                        <li class="list-group-item p-1">
+                        <li class="list-group-item p-1 ps-2">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">  
                             <img height="13px" src = "/static/iconvs/star-orange.svg"/>
@@ -168,7 +168,7 @@
             <div id="collapseseller" class="accordion-collapse collapse show" data-bs-parent="#stickybar">
                 <div class="accordion-body p-4 pt-2">
                     <span class="fw-medium" style="font-weight:500 !important">Satıcı Filtrele</span>
-                    <div class="text-start mt-2 py-1 border border-1 rounded-2 scroll2" style="height:200px;">
+                    <div class="text-start mt-2 py-1 border border-1 rounded-1 scroll2" style="height:200px;">
                         <ul class="list-group list-group-flush" >
                         <li class="list-group-item">
                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
@@ -215,7 +215,7 @@
       </div>
       
       <div class="rounded-bottom-1 border border-top-0 p-2 mt-0" style="">
-        <button class="btn btn-warning rounded-2 w-100"style="font-size:13px !important">Filtrele</button>
+        <button id="fltbtn" class="btn btn-warning rounded-1 w-100"style="font-size:13px !important;font-weight:400 !important">Filtrele</button>
       </div>
       </div>
     </div>
@@ -223,10 +223,10 @@
     <div class="col-12 col-xl-10"> 
       <div id="listdiv" class="row row-cols-2 row-cols-lg-4 text-center">
         {% for product in products %}
-        <div class="col p-1 p-lg-3">
-          <div class="card border border-1 shadow-sm  p-1" id="prdcard" style="">
+        <div class="col p-2 p-lg-3">
+          <div class="card border border-1 shadow-sm" id="prdcard" style="">
             <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light text-center" data-mdb-ripple-color="light">
-              <img id="cardphoto" src="media/{{ product.productimage }}" class="w-100" style="object-fit: contain;aspect-ratio: 1 / 1;"/>
+              <img id="cardphoto" src="{{product.productimage}}" class="w-100" style="object-fit: contain;aspect-ratio: 1 / 1;"/>
               <a href="#!">
                 <div class="hover-overlay">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
@@ -236,7 +236,7 @@
             </div>
             <div class="card-body p-2 mt-0 align-middle" >   
               <a href="/urunler/{{product.slug}}" class="text-reset" style="text-decoration: none;">
-                <span id="cardname" class="card-title display-3 mx-0 px-0 mb-3" style="height:32px;" >{{product.productname}}</span>  
+                <span id="cardname" class="card-title display-3 mx-0 px-0 mb-2 text-start" style="height:32px;" >{{product.productname}}</span>  
               </a>
               <div class="d-flex justify-content-between align-items-center">
                 <div id="{{product.productrating}}" class="ratings">
@@ -249,16 +249,17 @@
                   <span class="mb-0 px-0 py-0 my-0 text-body-secondary" style="font-size:12px !important">({{product.productratingcount}})</span>
                 </div> 
               </div>  
-              <div class="text-center" style="">
-                <hr style="" class="mb-3 mt-2">
-                <h1 class="mb-1" style="font-size:13px ; font-weight:600 !important;" id="cardprice">{{product.productprice}} TL</h1>
-                  <button id="addbtn" type="button" class="btn w-100 mt-1 " style="font-weight:400 !important;" data-mdb-ripple-color="dark">Sepete Ekle</button>
+              <div class="text-center mb-1" style="">
+                <hr style="" class="mb-3 mt-1">
+                <span class="mb-1" style="font-size:14px !important; font-weight:600 !important;" id="cardprice">{{product.productprice}} TL</span>
+              
               </div>
             </div>
+            <button id="addbtn" type="button" class="btn w-100 rounded-bottom" style="font-weight:400 !important;height:40px" data-mdb-ripple-color="dark">Sepete Ekle</button>
           </div>
         </div>
         {% endfor %}
-        {%load static%}
+
         <script>
             $(document).ready(function(){
                 var windowWidth = $(window).width();
@@ -268,7 +269,7 @@
                 
               });
         </script>
-        <script src="{% static 'ajaxlisting.js'%}"></script>
+        <script src="{% static 'js/ajaxlisting.js'%}"></script>
       </div>
     </div>
   </div>

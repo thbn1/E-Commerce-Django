@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6@c%*7+c12n8z4*(s@+g_d1lbn5h5t0+q7md!%4wkv^#a&y=(q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1","192.168.1.109","192.168.1.105","192.168.1.113","192.168.1.103","192.168.1.106","192.168.1.102"]
+ALLOWED_HOSTS = ["localhost","127.0.0.1","192.168.1.109","192.168.1.105","192.168.1.113","192.168.1.103","192.168.1.106","192.168.1.102",".vercel.app"]
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
-    'debug_toolbar',
+
     'django.contrib.postgres',
 
 ]
@@ -51,7 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     "debug_toolbar.middleware.DebugToolbarMiddleware",
+
+
 ]
 
 ROOT_URLCONF = 'stageproject.urls'
@@ -78,7 +79,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'stageproject.wsgi.application'
 
-
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -87,7 +100,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': '1',
+        'PASSWORD': 'postgre123',
         'HOST': 'localhost',
         'PORT': '5432',        
     }
@@ -127,11 +140,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-STATIC_URL = 'static/'
-STATIC_ROOT = '/webapp/static/'
+MEDIA_ROOT =  [os.path.join(BASE_DIR,'media')]
+MEDIA_URL = 'media/'
+STATIC_ROOT = 'productionfiles'
+
+STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
